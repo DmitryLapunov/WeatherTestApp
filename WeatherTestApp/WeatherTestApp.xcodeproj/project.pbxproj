@@ -14,6 +14,10 @@
 		89CA43F42930001900CD865A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CA43F22930001900CD865A /* LaunchScreen.storyboard */; };
 		89CA4402293003AE00CD865A /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CA4401293003AE00CD865A /* WeatherModel.swift */; };
 		89CA44042930086700CD865A /* TestTaskJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 89CA44032930086700CD865A /* TestTaskJSON.json */; };
+		89CA44062930098000CD865A /* WeatherStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CA44052930098000CD865A /* WeatherStructure.swift */; };
+		89CA440929300EE800CD865A /* WeatherTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CA440829300EE800CD865A /* WeatherTypeEnum.swift */; };
+		89CA440B29300F3400CD865A /* WeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CA440A29300F3400CD865A /* WeatherRepository.swift */; };
+		89CA440D293011DB00CD865A /* AppErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CA440C293011DB00CD865A /* AppErrors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		89CA43F52930001900CD865A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89CA4401293003AE00CD865A /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		89CA44032930086700CD865A /* TestTaskJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = TestTaskJSON.json; path = WeatherTestApp/TestTaskJSON.json; sourceTree = "<group>"; };
+		89CA44052930098000CD865A /* WeatherStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStructure.swift; sourceTree = "<group>"; };
+		89CA440829300EE800CD865A /* WeatherTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherTypeEnum.swift; sourceTree = "<group>"; };
+		89CA440A29300F3400CD865A /* WeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepository.swift; sourceTree = "<group>"; };
+		89CA440C293011DB00CD865A /* AppErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +67,7 @@
 		89CA43E32930001800CD865A /* WeatherTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				89CA440729300EE000CD865A /* Enums */,
 				89CA44002930035D00CD865A /* ContentTemplates */,
 				89CA43FB293002C700CD865A /* WeatherScreen */,
 				89CA43FF2930031300CD865A /* Models */,
@@ -75,9 +84,11 @@
 		89CA43FB293002C700CD865A /* WeatherScreen */ = {
 			isa = PBXGroup;
 			children = (
+				89CA44052930098000CD865A /* WeatherStructure.swift */,
 				89CA43FE293002EB00CD865A /* CityInfoViewController */,
 				89CA43FD293002DF00CD865A /* DayForecastViewController */,
 				89CA43FC293002D000CD865A /* WeekForecastViewController */,
+				89CA440A29300F3400CD865A /* WeatherRepository.swift */,
 			);
 			path = WeatherScreen;
 			sourceTree = "<group>";
@@ -116,6 +127,15 @@
 			children = (
 			);
 			path = ContentTemplates;
+			sourceTree = "<group>";
+		};
+		89CA440729300EE000CD865A /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				89CA440829300EE800CD865A /* WeatherTypeEnum.swift */,
+				89CA440C293011DB00CD865A /* AppErrors.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +209,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89CA440D293011DB00CD865A /* AppErrors.swift in Sources */,
+				89CA440B29300F3400CD865A /* WeatherRepository.swift in Sources */,
+				89CA44062930098000CD865A /* WeatherStructure.swift in Sources */,
+				89CA440929300EE800CD865A /* WeatherTypeEnum.swift in Sources */,
 				89CA43EF2930001800CD865A /* WeatherTestApp.xcdatamodeld in Sources */,
 				89CA43E92930001800CD865A /* ViewController.swift in Sources */,
 				89CA4402293003AE00CD865A /* WeatherModel.swift in Sources */,

@@ -7,11 +7,6 @@
 
 import Foundation
 
-enum WeatherTypeEnum: String, Decodable {
-    case clouds
-    case snowfall
-}
-
 struct WeatherModel: Decodable {
     let city: String
     let temperature: String
