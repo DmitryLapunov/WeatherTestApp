@@ -12,6 +12,8 @@
 		89CA43EF2930001800CD865A /* WeatherTestApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89CA43ED2930001800CD865A /* WeatherTestApp.xcdatamodeld */; };
 		89CA43F12930001900CD865A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89CA43F02930001900CD865A /* Assets.xcassets */; };
 		89CA43F42930001900CD865A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CA43F22930001900CD865A /* LaunchScreen.storyboard */; };
+		89CA4402293003AE00CD865A /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CA4401293003AE00CD865A /* WeatherModel.swift */; };
+		89CA44042930086700CD865A /* TestTaskJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 89CA44032930086700CD865A /* TestTaskJSON.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		89CA43F02930001900CD865A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89CA43F32930001900CD865A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89CA43F52930001900CD865A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89CA4401293003AE00CD865A /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
+		89CA44032930086700CD865A /* TestTaskJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = TestTaskJSON.json; path = WeatherTestApp/TestTaskJSON.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +42,7 @@
 		89CA43D82930001800CD865A = {
 			isa = PBXGroup;
 			children = (
+				89CA44032930086700CD865A /* TestTaskJSON.json */,
 				89CA43E32930001800CD865A /* WeatherTestApp */,
 				89CA43E22930001800CD865A /* Products */,
 			);
@@ -101,6 +106,7 @@
 		89CA43FF2930031300CD865A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				89CA4401293003AE00CD865A /* WeatherModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -170,6 +176,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89CA44042930086700CD865A /* TestTaskJSON.json in Resources */,
 				89CA43F42930001900CD865A /* LaunchScreen.storyboard in Resources */,
 				89CA43F12930001900CD865A /* Assets.xcassets in Resources */,
 			);
@@ -184,6 +191,7 @@
 			files = (
 				89CA43EF2930001800CD865A /* WeatherTestApp.xcdatamodeld in Sources */,
 				89CA43E92930001800CD865A /* ViewController.swift in Sources */,
+				89CA4402293003AE00CD865A /* WeatherModel.swift in Sources */,
 				89CA43E52930001800CD865A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
