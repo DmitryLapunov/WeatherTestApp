@@ -18,12 +18,13 @@ final class WeatherRepository: WeatherRepositoryProtocol {
         let fetchResponse = readJsonFile(fileName: "TestTaskJSON")
         switch fetchResponse {
         case .success(let fetchedData):
-            guard let weatherModel = try? JSONDecoder().decode(WeatherModel.self, from: fetchedData) else {
-                completion(.failure(AppErrors.parseError))
-                return
+            do {
+                let weatherModel: WeatherModel = try JSONDecoder().decode(WeatherModel.self, from: fetchedData)
+                let weatherStructure = WeatherStructure(weather: weatherModel)
+                completion(.success(weatherStructure))
+            } catch let error {
+                completion(.failure(error))
             }
-            let weatherStructure = WeatherStructure(weather: weatherModel)
-            completion(.success(weatherStructure))
         case .failure(let error):
             completion(.failure(error))
         }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CityInfoViewController: UIViewController {
+final class CityInfoViewController: UIViewController {
     
     var presenter: CityInfoPresenterProtocol?
     let controllerView = CityInfoView()

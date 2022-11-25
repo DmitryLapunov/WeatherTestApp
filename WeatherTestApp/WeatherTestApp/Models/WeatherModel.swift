@@ -24,8 +24,8 @@ struct WeatherModel: Decodable {
 }
 
 struct TodayWeatherModel: Decodable {
-    let timestamp: Int
-    let weatherType: WeatherTypeEnum
+    let timestamp: String
+    let weatherType: String
     let temperature: String
     var sunset: Bool?
     
@@ -41,7 +41,7 @@ struct WeekdayWeatherModel: Decodable {
     let date: String
     let minTemperature: Int
     let maxTemperature: Int
-    let weatherType: WeatherTypeEnum
+    let weatherType: String
     
     enum CodingKeys: String, CodingKey {
         case date

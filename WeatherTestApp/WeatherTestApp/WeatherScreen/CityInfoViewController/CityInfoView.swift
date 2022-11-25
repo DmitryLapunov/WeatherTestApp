@@ -46,7 +46,7 @@ final class CityInfoView: UIView {
     }
     
     private func setConstraints() {
-        cityLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 16).isActive = true
+        cityLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 60).isActive = true
         cityLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         
         weatherLabel.topAnchor.constraint(equalTo: cityLabel.bottomAnchor, constant: 6).isActive = true

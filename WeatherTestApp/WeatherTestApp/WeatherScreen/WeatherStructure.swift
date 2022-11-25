@@ -24,14 +24,14 @@ struct WeatherStructure {
 }
 
 struct TodayWeatherStructure {
-    let timestamp: Int
+    let timestamp: String
     let weatherType: WeatherTypeEnum
     let temperature: String
     let sunset: Bool
     
     init(weather: TodayWeatherModel) {
         self.timestamp = weather.timestamp
-        self.weatherType = weather.weatherType
+        self.weatherType = WeatherTypeEnum(rawValue: weather.weatherType) ?? WeatherTypeEnum.clouds
         self.temperature = weather.temperature
         if let isSunset = weather.sunset {
             self.sunset = isSunset
@@ -51,6 +51,6 @@ struct WeekdayWeatherStructure {
         self.date = weather.date
         self.minTemperature = weather.minTemperature
         self.maxTemperature = weather.maxTemperature
-        self.weatherType = weather.weatherType
+        self.weatherType = WeatherTypeEnum(rawValue: weather.weatherType) ?? WeatherTypeEnum.clouds
     }
 }
