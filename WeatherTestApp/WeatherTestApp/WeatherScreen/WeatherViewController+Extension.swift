@@ -18,5 +18,11 @@ extension WeatherViewController: WeatherViewProtocol {
         controllerView.addView(view: cityInfoChild.view, height: 126)
         self.addChild(cityInfoChild)
         cityInfoChild.didMove(toParent: self)
+        
+        let dayForecastChildBuilder = DayForecastBuilder()
+        let dayForecastChild = dayForecastChildBuilder.build(weatherStructure: data)
+        controllerView.addView(view: dayForecastChild.view)
+        self.addChild(dayForecastChild)
+        dayForecastChild.didMove(toParent: self)
     }
 }

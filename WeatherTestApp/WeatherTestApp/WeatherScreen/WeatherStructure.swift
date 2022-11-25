@@ -16,7 +16,16 @@ struct WeatherStructure {
     
     init(weather: WeatherModel) {
         self.city = weather.city
-        self.temperature = weather.temperature
+        if let exactTemperature = weather.temperature.components(separatedBy: "\u{0020}|\u{0020}").first,
+           let weatherDescription = weather.temperature.components(separatedBy: "\u{0020}|\u{0020}").last {
+            self.temperature = String(format: "%@%@%@%@",
+                                      exactTemperature,
+                                      "°",
+                                      "\u{0020}|\u{0020}",
+                                      weatherDescription)
+        } else {
+            self.temperature = weather.temperature
+        }
         self.description = weather.description
         self.weatherPerDay = weather.weatherPerDay.map({ TodayWeatherStructure(weather: $0) })
         self.forecast = weather.forecast.map({ WeekdayWeatherStructure(weather: $0) })
@@ -31,8 +40,8 @@ struct TodayWeatherStructure {
     
     init(weather: TodayWeatherModel) {
         self.timestamp = weather.timestamp
-        self.weatherType = WeatherTypeEnum(rawValue: weather.weatherType) ?? WeatherTypeEnum.clouds
-        self.temperature = weather.temperature
+        self.weatherType = WeatherTypeEnum.allCases.randomElement() ?? WeatherTypeEnum.clouds
+        self.temperature = weather.temperature + "°"
         if let isSunset = weather.sunset {
             self.sunset = isSunset
         } else {
@@ -43,14 +52,14 @@ struct TodayWeatherStructure {
 
 struct WeekdayWeatherStructure {
     let date: String
-    let minTemperature: Int
-    let maxTemperature: Int
+    let minTemperature: String
+    let maxTemperature: String
     let weatherType: WeatherTypeEnum
     
     init(weather: WeekdayWeatherModel) {
         self.date = weather.date
-        self.minTemperature = weather.minTemperature
-        self.maxTemperature = weather.maxTemperature
-        self.weatherType = WeatherTypeEnum(rawValue: weather.weatherType) ?? WeatherTypeEnum.clouds
+        self.minTemperature = String(weather.minTemperature) + "°"
+        self.maxTemperature = String(weather.maxTemperature) + "°"
+        self.weatherType = WeatherTypeEnum.allCases.randomElement() ?? WeatherTypeEnum.clouds
     }
 }

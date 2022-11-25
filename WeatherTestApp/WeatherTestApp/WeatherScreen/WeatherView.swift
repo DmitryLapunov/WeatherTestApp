@@ -43,7 +43,7 @@ final class WeatherView: UIView {
     }
     
     private func setConstraints() {
-        scrollView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        scrollView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
         scrollView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
@@ -55,8 +55,10 @@ final class WeatherView: UIView {
         stackView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
     }
     
-    func addView(view: UIView, height: CGFloat) {
+    func addView(view: UIView, height: CGFloat? = nil) {
         stackView.addArrangedSubview(view)
-        view.heightAnchor.constraint(equalToConstant: height).isActive = true
+        if let height = height {
+            view.heightAnchor.constraint(equalToConstant: height).isActive = true
+        }
     }
 }
