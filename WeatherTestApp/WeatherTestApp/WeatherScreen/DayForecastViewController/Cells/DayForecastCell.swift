@@ -72,7 +72,11 @@ final class DayForecastCell: UICollectionViewCell {
         let currentHour = String(Calendar.current.component(.hour, from: Date()))
         topLabel.text = currentHour == object.timestamp ? "Сейчас" : object.timestamp
         if object.sunset {
-            weatherImageView.image = UIImage(systemName: "sunset.fill")?.withRenderingMode(.alwaysOriginal)
+            if #available(iOS 14, *) {
+                weatherImageView.image = UIImage(systemName: "sunset.fill")?.withRenderingMode(.alwaysOriginal)
+            } else {
+                weatherImageView.image = UIImage(named: "fi_sunset")
+            }
             bottomLabel.font = UIFont.systemFont(ofSize: 18)
             bottomLabel.text = "Заход солнца"
         } else {

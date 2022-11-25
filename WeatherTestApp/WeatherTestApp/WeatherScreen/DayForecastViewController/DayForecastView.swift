@@ -51,6 +51,7 @@ final class DayForecastView: UIView {
                                                    right: 14)
         collectionView.backgroundColor = UIColor.clear
         collectionView.setCollectionViewLayout(layout, animated: true)
+        collectionView.showsHorizontalScrollIndicator = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
     }()

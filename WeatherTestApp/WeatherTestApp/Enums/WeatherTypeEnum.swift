@@ -26,7 +26,11 @@ enum WeatherTypeEnum: String, CaseIterable {
                 return cloudImage
             }
         case .snowfall:
-            return UIImage(systemName: "snowflake") ?? UIImage()
+            if #available(iOS 15, *) {
+                return UIImage(systemName: "snowflake") ?? UIImage()
+            } else {
+                return UIImage(named: "fi_snowflake") ?? UIImage()
+            }
         }
     }
 }
