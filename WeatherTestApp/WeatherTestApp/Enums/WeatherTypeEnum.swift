@@ -15,21 +15,21 @@ enum WeatherTypeEnum: String, CaseIterable {
     var weatherIcon: UIImage {
         switch self {
         case .clouds:
-            let cloudImage = UIImage(systemName: "cloud.fill") ?? UIImage()
+            let cloudImage = Images.System.cloudImage
             let flipOrientation = (cloudImage.imageOrientation.rawValue + 4) % 8
             if let cgImage = cloudImage.cgImage, let orientation = UIImage.Orientation(rawValue: flipOrientation) {
                 let flippedImage = UIImage(cgImage: cgImage,
                                            scale: cloudImage.scale,
                                            orientation: orientation)
-                return flippedImage
+                return flippedImage.withTintColor(Colors.Custom.basicWhite)
             } else {
-                return cloudImage
+                return cloudImage.withTintColor(Colors.Custom.basicWhite)
             }
         case .snowfall:
             if #available(iOS 15, *) {
-                return UIImage(systemName: "snowflake") ?? UIImage()
+                return Images.System.snowflake
             } else {
-                return UIImage(named: "fi_snowflake") ?? UIImage()
+                return Images.Custom.snowflake
             }
         }
     }

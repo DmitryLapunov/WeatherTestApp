@@ -20,7 +20,7 @@ final class WeatherView: UIView {
         let stackView = UIStackView()
         stackView.alignment = .fill
         stackView.distribution = .fill
-        stackView.spacing = 9
+        stackView.spacing = Constants.Spacing.childControllers
         stackView.axis = .vertical
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
@@ -28,13 +28,32 @@ final class WeatherView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.white
         setupSubviews()
         setConstraints()
     }
     
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        assignbackground(frame: rect)
+    }
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+    }
+    
+    private func assignbackground(frame: CGRect) {
+        let background = Images.Custom.background
+        lazy var imageView: UIImageView = {
+            imageView = UIImageView(frame: frame)
+            imageView.contentMode =  .scaleAspectFill
+            imageView.clipsToBounds = true
+            imageView.image = background
+            imageView.center = self.center
+            return imageView
+        }()
+        addSubview(imageView)
+        sendSubviewToBack(imageView)
+        self.backgroundColor = Colors.Custom.bluishGray
     }
     
     private func setupSubviews() {

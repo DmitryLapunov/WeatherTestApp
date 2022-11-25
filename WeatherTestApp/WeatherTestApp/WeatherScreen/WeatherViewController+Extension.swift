@@ -15,7 +15,8 @@ extension WeatherViewController: WeatherViewProtocol {
     func configureControllers(data: WeatherStructure) {
         let cityInfoChildBuilder = CityInfoBuilder()
         let cityInfoChild = cityInfoChildBuilder.build(weatherStructure: data)
-        controllerView.addView(view: cityInfoChild.view, height: 126)
+        controllerView.addView(view: cityInfoChild.view,
+                               height: Constants.CustomConstraints.cityInfoChildHeight)
         self.addChild(cityInfoChild)
         cityInfoChild.didMove(toParent: self)
         
@@ -27,7 +28,8 @@ extension WeatherViewController: WeatherViewProtocol {
         
         let weekForecastChildBuilder = WeekForecastBuilder()
         let weekForecastChild = weekForecastChildBuilder.build(weatherStructure: data)
-        controllerView.addView(view: weekForecastChild.view, height: 466)
+        controllerView.addView(view: weekForecastChild.view,
+                               height: Constants.CustomConstraints.weekForecastChildHeight)
         self.addChild(weekForecastChild)
         weekForecastChild.didMove(toParent: self)
     }

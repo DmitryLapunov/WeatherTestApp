@@ -13,10 +13,10 @@ final class WeekForecastCell: UITableViewCell {
     
     private lazy var weekdayLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 18)
-        label.textColor = UIColor.black
+        label.font = Fonts.Custom.weekday
+        label.textColor = Colors.Custom.basicWhite
         label.textAlignment = .left
-        label.numberOfLines = 1
+        label.numberOfLines = Constants.Label.singleLine
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -25,7 +25,7 @@ final class WeekForecastCell: UITableViewCell {
         let stackView = UIStackView()
         stackView.alignment = .fill
         stackView.distribution = .fill
-        stackView.spacing = 3
+        stackView.spacing = Constants.Spacing.weatherStack
         stackView.axis = .vertical
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
@@ -34,17 +34,17 @@ final class WeekForecastCell: UITableViewCell {
     private lazy var weatherImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
-        imageView.tintColor = UIColor.black
+        imageView.tintColor = Colors.Custom.basicWhite
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
     private lazy var probabilityLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 11)
-        label.textColor = UIColor.black
+        label.font = Fonts.Custom.probability
+        label.textColor = Colors.Custom.probabilityBlue
         label.textAlignment = .center
-        label.numberOfLines = 1
+        label.numberOfLines = Constants.Label.singleLine
         label.isHidden = true
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -52,20 +52,20 @@ final class WeekForecastCell: UITableViewCell {
     
     private lazy var minTemperatureLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = UIColor.black
+        label.font = Fonts.Custom.dayTemperature
+        label.textColor = Colors.Custom.forecastGrayishWhite
         label.textAlignment = .center
-        label.numberOfLines = 1
+        label.numberOfLines = Constants.Label.singleLine
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private lazy var maxTemperatureLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = UIColor.black
+        label.font = Fonts.Custom.dayTemperature
+        label.textColor = Colors.Custom.basicWhite
         label.textAlignment = .right
-        label.numberOfLines = 1
+        label.numberOfLines = Constants.Label.singleLine
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -73,7 +73,7 @@ final class WeekForecastCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.selectionStyle = .none
-        backgroundColor = UIColor.clear
+        backgroundColor = Colors.Custom.clearColor
         setupSubviews()
         setConstraints()
     }
@@ -95,11 +95,13 @@ final class WeekForecastCell: UITableViewCell {
         weekdayLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
         weekdayLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         
-        stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -197).isActive = true
+        stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
+                                            constant: Constants.CustomConstraints.weatherStackTrailing).isActive = true
         stackView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        stackView.widthAnchor.constraint(equalToConstant: 30).isActive = true
+        stackView.widthAnchor.constraint(equalToConstant: Constants.CustomConstraints.weatherStackWidth).isActive = true
         
-        minTemperatureLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -100).isActive = true
+        minTemperatureLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,
+                                                      constant: Constants.CustomConstraints.minTemperatureTrailing).isActive = true
         minTemperatureLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         
         maxTemperatureLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
@@ -111,13 +113,13 @@ final class WeekForecastCell: UITableViewCell {
         weatherImageView.image = object.weatherType.weatherIcon
         switch object.weatherType {
         case .clouds:
-            weatherImageView.widthAnchor.constraint(equalToConstant: 28).isActive = true
-            weatherImageView.heightAnchor.constraint(equalToConstant: 28).isActive = true
+            weatherImageView.widthAnchor.constraint(equalToConstant: Constants.BasicConstraints.largeWeatherIcon).isActive = true
+            weatherImageView.heightAnchor.constraint(equalToConstant: Constants.BasicConstraints.largeWeatherIcon).isActive = true
         case .snowfall:
-            weatherImageView.widthAnchor.constraint(equalToConstant: 20).isActive = true
-            weatherImageView.heightAnchor.constraint(equalToConstant: 20).isActive = true
+            weatherImageView.widthAnchor.constraint(equalToConstant: Constants.BasicConstraints.mediumWeatherIcon).isActive = true
+            weatherImageView.heightAnchor.constraint(equalToConstant: Constants.BasicConstraints.mediumWeatherIcon).isActive = true
             probabilityLabel.isHidden = false
-            probabilityLabel.text = "70 %"
+            probabilityLabel.text = Contents.Strings.probability
         }
         minTemperatureLabel.text = object.minTemperature
         maxTemperatureLabel.text = object.maxTemperature

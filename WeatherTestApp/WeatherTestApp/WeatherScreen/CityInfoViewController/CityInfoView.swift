@@ -11,27 +11,27 @@ final class CityInfoView: UIView {
     
     private lazy var cityLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 30)
-        label.textColor = UIColor.black
+        label.font = Fonts.Custom.cityName
+        label.textColor = Colors.Custom.basicWhite
         label.textAlignment = .center
-        label.numberOfLines = 1
+        label.numberOfLines = Constants.Label.singleLine
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private lazy var weatherLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16)
-        label.textColor = UIColor.black
+        label.font = Fonts.Custom.cityWeather
+        label.textColor = Colors.Custom.transparentWhite
         label.textAlignment = .center
-        label.numberOfLines = 1
+        label.numberOfLines = Constants.Label.singleLine
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.clear
+        self.backgroundColor = Colors.Custom.clearColor
         setupSubviews()
         setConstraints()
     }
@@ -46,10 +46,12 @@ final class CityInfoView: UIView {
     }
     
     private func setConstraints() {
-        cityLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 16).isActive = true
+        cityLabel.topAnchor.constraint(equalTo: self.topAnchor,
+                                       constant: Constants.CustomConstraints.cityLabelTop).isActive = true
         cityLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         
-        weatherLabel.topAnchor.constraint(equalTo: cityLabel.bottomAnchor, constant: 6).isActive = true
+        weatherLabel.topAnchor.constraint(equalTo: cityLabel.bottomAnchor,
+                                          constant: Constants.CustomConstraints.weatherLabelTop).isActive = true
         weatherLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
     }
     

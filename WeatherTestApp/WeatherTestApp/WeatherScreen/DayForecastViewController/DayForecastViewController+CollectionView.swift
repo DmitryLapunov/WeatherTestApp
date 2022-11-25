@@ -11,27 +11,26 @@ import UIKit
 extension DayForecastViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let currentHour = String(Calendar.current.component(.hour, from: Date()))
-        let topLabelText = currentHour == weatherPerDay[indexPath.row].timestamp ? "Сейчас" : weatherPerDay[indexPath.row].timestamp
+        let topLabelText = currentHour == weatherPerDay[indexPath.row].timestamp ? Contents.Strings.currentTime : weatherPerDay[indexPath.row].timestamp
         let topLabelWidth = Int(topLabelText.size(withAttributes: [
-            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 14)
+            NSAttributedString.Key.font : Fonts.Custom.timestamp as Any
         ]).width)
-        
-        let fixedCellWidth = 43
-        
-        let bottomLabelText = weatherPerDay[indexPath.row].sunset ? "Заход солнца" : weatherPerDay[indexPath.row].temperature
+                
+        let bottomLabelText = weatherPerDay[indexPath.row].sunset ? Contents.Strings.sunset : weatherPerDay[indexPath.row].temperature
         var bottomLabelWidth = 0
         if weatherPerDay[indexPath.row].sunset {
             bottomLabelWidth = Int(bottomLabelText.size(withAttributes: [
-                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18)
+                NSAttributedString.Key.font : Fonts.Custom.timestampSunset as Any
             ]).width)
         } else {
             bottomLabelWidth = Int(bottomLabelText.size(withAttributes: [
-                NSAttributedString.Key.font : UIFont.systemFont(ofSize: 16)
+                NSAttributedString.Key.font : Fonts.Custom.timestampTemperature as Any
             ]).width)
         }
         
+        let fixedCellWidth = Constants.CellSize.fixedCellWidth
         let width = CGFloat(max(topLabelWidth, fixedCellWidth, bottomLabelWidth))
-        let height: CGFloat = 90
+        let height: CGFloat = Constants.CellSize.collectionViewHeight
         return CGSize(width: width, height: height)
     }
 }

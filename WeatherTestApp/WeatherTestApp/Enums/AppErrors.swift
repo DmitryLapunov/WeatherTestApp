@@ -14,9 +14,9 @@ enum AppErrors: Error {
     var localizedDescription: String {
         switch self {
         case .jsonError:
-            return "An error occured while trying to access JSON file."
+            return Contents.Errors.jsonError
         case .parseError:
-            return "An error occured while trying to parse JSON data."
+            return Contents.Errors.parseError
         }
     }
 }

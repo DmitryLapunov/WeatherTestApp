@@ -15,7 +15,7 @@ protocol WeatherRepositoryProtocol: AnyObject {
 
 final class WeatherRepository: WeatherRepositoryProtocol {
     func fetchWeather(completion: @escaping WeatherHandler) {
-        let fetchResponse = readJsonFile(fileName: "TestTaskJSON")
+        let fetchResponse = readJsonFile(fileName: Contents.Strings.jsonName)
         switch fetchResponse {
         case .success(let fetchedData):
             do {
@@ -32,7 +32,7 @@ final class WeatherRepository: WeatherRepositoryProtocol {
     
     private func readJsonFile(fileName: String) -> Result<Data, Error> {
         do {
-            if let bundlePath = Bundle.main.path(forResource: fileName, ofType: "json"),
+            if let bundlePath = Bundle.main.path(forResource: fileName, ofType: Contents.Strings.jsonType),
                let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8) {
                 return .success(jsonData)
             } else {

@@ -16,12 +16,12 @@ struct WeatherStructure {
     
     init(weather: WeatherModel) {
         self.city = weather.city
-        if let exactTemperature = weather.temperature.components(separatedBy: "\u{0020}|\u{0020}").first,
-           let weatherDescription = weather.temperature.components(separatedBy: "\u{0020}|\u{0020}").last {
+        if let exactTemperature = weather.temperature.components(separatedBy: Contents.Symbols.verticalSeparator).first,
+           let weatherDescription = weather.temperature.components(separatedBy: Contents.Symbols.verticalSeparator).last {
             self.temperature = String(format: "%@%@%@%@",
                                       exactTemperature,
-                                      "°",
-                                      "\u{0020}|\u{0020}",
+                                      Contents.Symbols.degreeSymbol,
+                                      Contents.Symbols.verticalSeparator,
                                       weatherDescription)
         } else {
             self.temperature = weather.temperature
@@ -41,7 +41,7 @@ struct TodayWeatherStructure {
     init(weather: TodayWeatherModel) {
         self.timestamp = weather.timestamp
         self.weatherType = WeatherTypeEnum.allCases.randomElement() ?? WeatherTypeEnum.clouds
-        self.temperature = weather.temperature + "°"
+        self.temperature = weather.temperature + Contents.Symbols.degreeSymbol
         if let isSunset = weather.sunset {
             self.sunset = isSunset
         } else {
@@ -58,8 +58,8 @@ struct WeekdayWeatherStructure {
     
     init(weather: WeekdayWeatherModel) {
         self.date = weather.date
-        self.minTemperature = String(weather.minTemperature) + "°"
-        self.maxTemperature = String(weather.maxTemperature) + "°"
+        self.minTemperature = String(weather.minTemperature) + Contents.Symbols.degreeSymbol
+        self.maxTemperature = String(weather.maxTemperature) + Contents.Symbols.degreeSymbol
         self.weatherType = WeatherTypeEnum.allCases.randomElement() ?? WeatherTypeEnum.clouds
     }
 }
