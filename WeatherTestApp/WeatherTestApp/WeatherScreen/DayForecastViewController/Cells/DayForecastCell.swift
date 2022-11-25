@@ -9,7 +9,7 @@ import UIKit
 
 final class DayForecastCell: UICollectionViewCell {
     
-    static let reuseIdentifier = String(describing: DayForecastCell.self)
+    static let reuseIdentifier = "DayForecastCell"
     
     private lazy var topLabel: UILabel = {
         let label = UILabel()

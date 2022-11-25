@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89651F3129309D94006F3CB7 /* WeekForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89651F3029309D94006F3CB7 /* WeekForecastViewController.swift */; };
+		89651F3329309DAD006F3CB7 /* WeekForecastViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89651F3229309DAD006F3CB7 /* WeekForecastViewController+Extension.swift */; };
+		89651F3529309DBB006F3CB7 /* WeekForecastViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89651F3429309DBB006F3CB7 /* WeekForecastViewController+TableView.swift */; };
+		89651F3729309DD8006F3CB7 /* WeekForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89651F3629309DD8006F3CB7 /* WeekForecastView.swift */; };
+		89651F3929309DED006F3CB7 /* WeekForecastPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89651F3829309DED006F3CB7 /* WeekForecastPresenter.swift */; };
+		89651F3B29309DF7006F3CB7 /* WeekForecastBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89651F3A29309DF7006F3CB7 /* WeekForecastBuilder.swift */; };
+		89651F3E29309E24006F3CB7 /* WeekForecastCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89651F3D29309E24006F3CB7 /* WeekForecastCell.swift */; };
 		89CA43E52930001800CD865A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CA43E42930001800CD865A /* AppDelegate.swift */; };
-		89CA43EF2930001800CD865A /* WeatherTestApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89CA43ED2930001800CD865A /* WeatherTestApp.xcdatamodeld */; };
 		89CA43F12930001900CD865A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89CA43F02930001900CD865A /* Assets.xcassets */; };
 		89CA43F42930001900CD865A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CA43F22930001900CD865A /* LaunchScreen.storyboard */; };
 		89CA4402293003AE00CD865A /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CA4401293003AE00CD865A /* WeatherModel.swift */; };
@@ -42,9 +48,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		89651F3029309D94006F3CB7 /* WeekForecastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekForecastViewController.swift; sourceTree = "<group>"; };
+		89651F3229309DAD006F3CB7 /* WeekForecastViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeekForecastViewController+Extension.swift"; sourceTree = "<group>"; };
+		89651F3429309DBB006F3CB7 /* WeekForecastViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WeekForecastViewController+TableView.swift"; sourceTree = "<group>"; };
+		89651F3629309DD8006F3CB7 /* WeekForecastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekForecastView.swift; sourceTree = "<group>"; };
+		89651F3829309DED006F3CB7 /* WeekForecastPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekForecastPresenter.swift; sourceTree = "<group>"; };
+		89651F3A29309DF7006F3CB7 /* WeekForecastBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekForecastBuilder.swift; sourceTree = "<group>"; };
+		89651F3D29309E24006F3CB7 /* WeekForecastCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekForecastCell.swift; sourceTree = "<group>"; };
 		89CA43E12930001800CD865A /* WeatherTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89CA43E42930001800CD865A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		89CA43EE2930001800CD865A /* WeatherTestApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WeatherTestApp.xcdatamodel; sourceTree = "<group>"; };
 		89CA43F02930001900CD865A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		89CA43F32930001900CD865A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89CA43F52930001900CD865A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,6 +102,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89651F3C29309E02006F3CB7 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				89651F3D29309E24006F3CB7 /* WeekForecastCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		89CA43D82930001800CD865A = {
 			isa = PBXGroup;
 			children = (
@@ -120,7 +140,6 @@
 				89CA43F02930001900CD865A /* Assets.xcassets */,
 				89CA43F22930001900CD865A /* LaunchScreen.storyboard */,
 				89CA43F52930001900CD865A /* Info.plist */,
-				89CA43ED2930001800CD865A /* WeatherTestApp.xcdatamodeld */,
 			);
 			path = WeatherTestApp;
 			sourceTree = "<group>";
@@ -145,6 +164,13 @@
 		89CA43FC293002D000CD865A /* WeekForecastViewController */ = {
 			isa = PBXGroup;
 			children = (
+				89651F3029309D94006F3CB7 /* WeekForecastViewController.swift */,
+				89651F3229309DAD006F3CB7 /* WeekForecastViewController+Extension.swift */,
+				89651F3429309DBB006F3CB7 /* WeekForecastViewController+TableView.swift */,
+				89651F3629309DD8006F3CB7 /* WeekForecastView.swift */,
+				89651F3829309DED006F3CB7 /* WeekForecastPresenter.swift */,
+				89651F3A29309DF7006F3CB7 /* WeekForecastBuilder.swift */,
+				89651F3C29309E02006F3CB7 /* Cells */,
 			);
 			path = WeekForecastViewController;
 			sourceTree = "<group>";
@@ -299,27 +325,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89651F3E29309E24006F3CB7 /* WeekForecastCell.swift in Sources */,
 				89CA440D293011DB00CD865A /* AppErrors.swift in Sources */,
 				89CA442029303AF400CD865A /* WeatherViewController.swift in Sources */,
 				89CA441429301E0A00CD865A /* CityInfoStructure.swift in Sources */,
 				89CA440B29300F3400CD865A /* WeatherRepository.swift in Sources */,
 				89CA441829302A3900CD865A /* CityInfoView.swift in Sources */,
 				89CA442629303B4D00CD865A /* WeatherPresenter.swift in Sources */,
+				89651F3329309DAD006F3CB7 /* WeekForecastViewController+Extension.swift in Sources */,
 				89CA442829303B5800CD865A /* WeatherBuilder.swift in Sources */,
 				89CA4445293058D100CD865A /* DayForecastView.swift in Sources */,
 				89CA441C29302AA700CD865A /* CityInfoPresenter.swift in Sources */,
 				89CA44062930098000CD865A /* WeatherStructure.swift in Sources */,
+				89651F3129309D94006F3CB7 /* WeekForecastViewController.swift in Sources */,
 				89CA442429303B3900CD865A /* WeatherView.swift in Sources */,
 				89CA443D2930582100CD865A /* DayForecastStructure.swift in Sources */,
 				89CA4441293058AA00CD865A /* DayForecastViewController+Extension.swift in Sources */,
 				89CA444C29305D6600CD865A /* DayForecastCell.swift in Sources */,
 				89CA440929300EE800CD865A /* WeatherTypeEnum.swift in Sources */,
+				89651F3929309DED006F3CB7 /* WeekForecastPresenter.swift in Sources */,
+				89651F3529309DBB006F3CB7 /* WeekForecastViewController+TableView.swift in Sources */,
 				89CA4449293058EB00CD865A /* DayForecastBuilder.swift in Sources */,
 				89CA443F2930589900CD865A /* DayForecastViewController.swift in Sources */,
+				89651F3B29309DF7006F3CB7 /* WeekForecastBuilder.swift in Sources */,
 				89CA4412293014C200CD865A /* DateFormatter.swift in Sources */,
+				89651F3729309DD8006F3CB7 /* WeekForecastView.swift in Sources */,
 				89CA4443293058B600CD865A /* DayForecastViewController+CollectionView.swift in Sources */,
 				89CA442229303B0700CD865A /* WeatherViewController+Extension.swift in Sources */,
-				89CA43EF2930001800CD865A /* WeatherTestApp.xcdatamodeld in Sources */,
 				89CA4402293003AE00CD865A /* WeatherModel.swift in Sources */,
 				89CA43E52930001800CD865A /* AppDelegate.swift in Sources */,
 				89CA441E29302DCB00CD865A /* CityInfoBuilder.swift in Sources */,
@@ -557,19 +589,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		89CA43ED2930001800CD865A /* WeatherTestApp.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				89CA43EE2930001800CD865A /* WeatherTestApp.xcdatamodel */,
-			);
-			currentVersion = 89CA43EE2930001800CD865A /* WeatherTestApp.xcdatamodel */;
-			path = WeatherTestApp.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 89CA43D92930001800CD865A /* Project object */;
 }
