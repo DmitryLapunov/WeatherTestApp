@@ -54,7 +54,7 @@ final class CityInfoView: UIView {
     }
     
     func setupView(_ object: CityInfoStructure) {
-        cityLabel.text = object.city
+        cityLabel.text = NSLocalizedString(object.city, comment: "")
         weatherLabel.text = object.temperature
     }
 }
