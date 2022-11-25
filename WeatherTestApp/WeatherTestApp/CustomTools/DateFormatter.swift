@@ -10,11 +10,16 @@ import UIKit
 
 final class CustomDateFormatter {
     static func shortWeekdayFromDate(unformattedDate: String) -> String {
-        let dateFormatterGet = DateFormatter()
-        dateFormatterGet.dateFormat = "dd.MM.yyyy"
         let dateFormatterSet = DateFormatter()
         dateFormatterSet.dateFormat = "EE"
-        let formattedDate = dateFormatterSet.string(from: dateFormatterGet.date(from: unformattedDate) ?? Date())
+        let formattedDate = dateFormatterSet.string(from: getDateFromString(unformattedDate: unformattedDate))
+        return formattedDate
+    }
+    
+    static func getDateFromString(unformattedDate: String) -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        let formattedDate = dateFormatter.date(from: unformattedDate) ?? Date()
         return formattedDate
     }
 }

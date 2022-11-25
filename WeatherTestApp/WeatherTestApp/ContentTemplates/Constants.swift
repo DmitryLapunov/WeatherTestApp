@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum Constants {
     enum BasicConstraints {
@@ -36,9 +37,9 @@ enum Constants {
         static let forecastLabelLeading: CGFloat = 37
         static let calendarImageViewLeading: CGFloat = 16
         static let tableViewBottom: CGFloat = -21
-        static let weatherStackTrailing: CGFloat = -197
+        static let weatherStackTrailing: CGFloat = -(UIScreen.main.bounds.width / 2.5)
         static let weatherStackWidth: CGFloat = 30
-        static let minTemperatureTrailing: CGFloat = -100
+        static let minTemperatureTrailing: CGFloat = -(UIScreen.main.bounds.width / 5)
     }
     
     enum Label {

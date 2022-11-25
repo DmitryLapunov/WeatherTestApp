@@ -23,7 +23,7 @@ final class WeekForecastCell: UITableViewCell {
     
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
-        stackView.alignment = .fill
+        stackView.alignment = .center
         stackView.distribution = .fill
         stackView.spacing = Constants.Spacing.weatherStack
         stackView.axis = .vertical
@@ -109,7 +109,13 @@ final class WeekForecastCell: UITableViewCell {
     }
     
     func setupCell(_ object: WeekdayWeatherStructure) {
-        weekdayLabel.text = CustomDateFormatter.shortWeekdayFromDate(unformattedDate: object.date)
+        let currentDate = Date()
+        let weekdayDate = CustomDateFormatter.getDateFromString(unformattedDate: object.date)
+        if currentDate == weekdayDate {
+            weekdayLabel.text = Contents.Strings.today
+        } else {
+            weekdayLabel.text = CustomDateFormatter.shortWeekdayFromDate(unformattedDate: object.date).capitalized
+        }
         weatherImageView.image = object.weatherType.weatherIcon
         switch object.weatherType {
         case .clouds:

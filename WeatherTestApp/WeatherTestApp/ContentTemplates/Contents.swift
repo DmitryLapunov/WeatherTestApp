@@ -15,6 +15,7 @@ enum Contents {
         static let jsonType = "json"
         static let tenDayForecast = "10-дневный прогноз"
         static let probability = "70 %"
+        static let today = "Сегодня"
     }
     
     enum Symbols {
